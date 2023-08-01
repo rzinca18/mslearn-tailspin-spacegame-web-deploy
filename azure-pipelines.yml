@@ -77,12 +77,6 @@ stages:
     environment: dev
     variables:
     - group: Release
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'your-subscription'
-    appType: 'webAppLinux'
-    appName: '$(WebAppNameDev)'
-    package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
     strategy:
       runOnce:
         deploy:
